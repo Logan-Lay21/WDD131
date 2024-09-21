@@ -1,7 +1,65 @@
-img {
-    display:block;
-    width: 150px;
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
 }
-div {
+
+.container {
+    width: 60%; /* Reduced width for a more narrow look */
+    margin: 40px auto; /* Adding some space around the container */
+    background-color: white;
+    padding: 20px 40px; /* Padding adjusted to add more space inside */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
     text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px; /* Slightly more padding for separation */
+    margin-bottom: 20px;  /* Margin below header to space it out */
+}
+
+.header h1 {
+    font-size: 1.8em; /* Slightly smaller font size for compactness */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.header h2 {
+    font-size: 1.3em;
+    color: #4d7eb1;
+    margin-top: 5px; /* Reduced margin between title and subtitle */
+}
+
+.content {
+    font-size: 1.05em; /* Slightly smaller for tighter text */
+    line-height: 1.5; /* Line height reduced for compactness */
+    margin-bottom: 30px; /* Add spacing between content and footer */
+}
+
+.content em {
+    font-style: italic;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px; /* Space under the italicized line */
+}
+
+ol {
+    margin-left: 20px;
+}
+
+ol li {
+    margin-bottom: 10px; /* Space between list items */
+}
+
+.footer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer img {
+    width: 120px; /* Adjusted logo size for better fit */
+    height: auto;
 }
