@@ -74,3 +74,21 @@ ol li {
     width: 120px;
     height: auto;
 }
+
+/* Light Mode */
+body.light-mode {
+    background-color: white;
+    color: black;
+}
+
+/*----------------------------------------*/
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: black;
+    color: white;
+}
+
+body.dark-mode .header h2 {
+    color: #006eb6
+}
