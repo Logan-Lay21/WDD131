@@ -48,12 +48,107 @@ img {
     
 }
 
-a {
+#menu {
+    display: block;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    padding: .5rem .75rem;
+    color: #52489c;
+    background-color: white;
+    border-radius: 2px;
+}
+nav {
+    background-color: white;
+    /* margin: auto; */
+}
+
+.navigation {
+    list-style: none;
+    margin: 0 auto;
+    max-width: 760px;
+}
+.navigation li {
     display: none;
 }
 
+.navigation a {
+    display: block;
+    padding: .75rem;
+    text-align: left;
+    text-decoration: none;
+    color: black;
+    font-weight: 700;
+    transition: 1s;
+    font-size: clamp(1rem, 2vmin, 1.5rem);
+}
+
+.show li {
+    display: block
+}
+
+/* #menu.show */
+
 figure {
     margin: 0;
+}
+
+/* .viewer {
+    display: grid;
+    position: fixed;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+    max-height: 100%;
+    max-width: 100%;
+    display: none;
+}
+
+.viewer button {
+    text-align: right;
+    text-align: start;
+    
+} */
+/* Modal Viewer Styles */
+.viewer {
+    display: none; /* Hidden by default */
+    position: fixed; /* Fixed position */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack items vertically */
+    display: flex; /* Use flexbox for centering */
+}
+
+/* Close Button */
+.close-viewer {
+    position: absolute; /* Position it absolutely */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    background-color: rgba(0,0,0,0.8); /* Accent color */
+    color: white; /* Text color */
+    border: none; /* Remove default border */
+    padding: 10px 15px; /* Padding for button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 20px; /* Larger font size */
+}
+
+/* Close button hover effect */
+.close-viewer:hover {
+    background-color: #d94e5a; /* Darker shade on hover */
+}
+
+/* Image Style */
+.viewer img {
+    max-width: 90%; /* Responsive image */
+    max-height: 90%; /* Responsive image */
+    border-radius: 8px; /* Rounded corners for image */
 }
 
 /* For medium screen viewing */
@@ -68,14 +163,20 @@ figure {
     .gallery {
         grid-template-columns: repeat(3, 1fr);
     }
-    button {
+    .navigation {
+        display: flex;
+    }
+    .navigation li {
+        display: block;
+        flex: 1 1 100%;
+    }
+    .navigation a {
+        text-align: center;
+    }
+    #menu {
         display: none;
     }
-    a {
-        display: inline;
-        margin-right: 60px;
-        margin-left: 60px;
-        color: white;
-
+    .viewer img {
+        max-width: 100%;
     }
 }
