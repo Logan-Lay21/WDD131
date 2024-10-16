@@ -35,7 +35,7 @@ function viewHandler(event) {
     const elementHold = event.target;
 
 	// get the src attribute from that element and 'split' it on the "-"
-    let url = elementHold.src.split("-")[0]
+    let url = elementHold.src.split("s-")[0]
 
 	// construct the new image file name by adding "-full.jpeg" to the first part of the array from the previous step
     url+="-full.jpeg"
