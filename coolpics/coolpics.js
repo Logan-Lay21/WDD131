@@ -1,7 +1,3 @@
-// document.getElementById('menu').addEventListener('click', function() {
-//     alert('Menu button clicked!');
-// })
-
 // Toggle dropdown menu
 document.querySelectorAll('.nav-links > li > a').forEach(link => {
     link.addEventListener('click', function(event) {
@@ -16,39 +12,6 @@ document.querySelectorAll('.nav-links > li > a').forEach(link => {
     });
 });
 
-// Optional: Close the dropdown if clicking outside of it
-// document.getElementById("menu-button").addEventListener('click', function(event) {
-//     const dropdowns = document.querySelectorAll('.dropdown');
-//     dropdowns.forEach(dropdown => {
-//         if (!dropdown.contains(event.target) && !dropdown.previousElementSibling.contains(event.target)) {
-//             dropdown.classList.remove('show'); // Close dropdown
-//         }
-//     });
-// });
-// const menuButton = document.querySelector(".menu-button");
-// function toggleMenu() {
-//   const menu = document.querySelector(".menu");
-//   let change = false
-//   if (!change){
-//     change = true
-//     menu.classList.toggle("hide");
-//   }
-//   else {
-//     change = false
-//     menu.classList.toggle("hide");
-//   }
-// }
-
-// menuButton.addEventListener("click", toggleMenu);
-
-// const menuButton = document.querySelector(".menu-button");
-// function toggleMenu() {
-//   const menu = document.querySelector(".menu");
-//   menu.classList.toggle("hide");
-// }
-
-// menuButton.addEventListener("click", toggleMenu);
-
 const mainnav = document.querySelector(".navigation");
 const hambutton = document.querySelector("#menu");
 
@@ -59,9 +22,42 @@ hambutton.addEventListener("click", () => {
 });
 
 // Get modal elements
-const viewer = document.querySelector('.viewer');
-const closeViewerButton = document.querySelector('.close-viewer');
 const image = document.querySelector('.viewer img'); // If you want to change the image dynamically
+
+
+// Toggle dropdown menu
+document.querySelectorAll(".gallery img").forEach(img => {
+    img.addEventListener("click", viewHandler);
+});
+
+function viewHandler(event) {
+	// create a variable to hold the element that was clicked on from event.target
+    const elementHold = event.target;
+
+	// get the src attribute from that element and 'split' it on the "-"
+    let url = elementHold.src.split("-")[0]
+
+	// construct the new image file name by adding "-full.jpeg" to the first part of the array from the previous step
+    url+="-full.jpeg"
+
+	// insert the viewerTemplate into the top of the body element
+    const template = viewerTemplate(url, "big-image")
+    document.body.insertAdjacentHTML("afterbegin", template)
+
+
+
+
+	// (element.insertAdjacentHTML("afterbegin", htmltoinsert))
+
+	// add a listener to the close button (X) that calls a function called closeViewer when clicked
+    const viewer = document.querySelector('.viewer');
+    const closeViewerButton = document.querySelector('.close-viewer');
+    // Close the viewer when the close button is clicked
+    closeViewerButton.onclick = function() {
+        viewer.style.display = 'none'; // Hide the viewer
+};
+
+}
 
 // Function to open the viewer with an image
 function viewerTemplate(pic, alt) {
@@ -71,14 +67,9 @@ function viewerTemplate(pic, alt) {
       </div>`;
 };
 
-// Close the viewer when the close button is clicked
-closeViewerButton.onclick = function() {
-    viewer.style.display = 'none'; // Hide the viewer
-};
-
 // Close the viewer when clicking outside of the image (optional)
-viewer.onclick = function(event) {
-    if (event.target === viewer) {
-        viewer.style.display = 'none'; // Hide the viewer
-    }
-};
+// viewer.onclick = function(event) {
+//     if (event.target === viewer) {
+//         viewer.style.display = 'none'; // Hide the viewer
+//     }
+// };

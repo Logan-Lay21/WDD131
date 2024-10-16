@@ -151,6 +151,12 @@ figure {
     border-radius: 8px; /* Rounded corners for image */
 }
 
+
+
+
+
+
+
 /* For medium screen viewing */
 @media screen and (min-width: 700px){
     .gallery {
@@ -178,5 +184,7 @@ figure {
     }
     .viewer img {
         max-width: 100%;
+        width: 80%;
+        height: 80%;
     }
 }

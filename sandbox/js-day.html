@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="js-day.css">
+</head>
+<body>
+    <button id="btn">Click Me</button>
+
+    <ul id="list">
+        <li>Hello</li>
+        <li>Hello</li>
+        <li>Hello</li>
+        <li>Hello</li>
+        <li>Hello</li>
+        <li>Hello</li>
+        <li>Hello</li>
+    </ul>
+
+    <script>
+        const obj = {
+            name: 'Logan Lay',
+            getName: () => {
+                return 'Logan Lay'
+            }
+        }
+
+        console.log(obj.getName())
+
+        const button = document.getElementById('btn')
+        button.addEventListener('click', handleClick)
+
+        function handleClick() {
+            console.log("Button Clicked")
+        }
+
+        for (let i = 0; i < 10; i++) {
+            console.log(i)
+        }
+
+        const list = document.getElementById('list')
+
+        console.log(list.children)
+
+        for (let i = 0; i < item.children.length; i++) {
+            const child = list.children[i]
+            console.log(child)
+        }
+    </script>
+    
+</body>
+</html>
