@@ -38,7 +38,7 @@ function viewHandler(event) {
     let url = elementHold.src.split("s-")[0]
 
 	// construct the new image file name by adding "-full.jpeg" to the first part of the array from the previous step
-    url+="-full.jpeg"
+    url+="s-full.jpeg"
 
 	// insert the viewerTemplate into the top of the body element
     const template = viewerTemplate(url, "big-image")
