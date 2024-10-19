@@ -3,13 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Books for Kids!</title>
+    <link rel="stylesheet" href="books4kids.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Books for Kids</h1>
+        <h1>Books for Kids!</h1>
         <nav>
-            <img>
+            <img src="books4kids-logo.jpg" alt="Books for kids logo">
+            <!-- Changed to unordered list for better semantics and accessibility -->
+            <ul>
+                <li><a href="#">Search</a></li>
+                <li><a href="#">Library</a></li>
+                <li><a href="#">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div id="bigScroll">
+            <!-- Wrapped each book in an article for better structure -->
+            <article class="book">
+                <!-- Changed IDs to classes for reusability -->
+                <div class="descriptionBox">
+                    <h2 class="title">Dream Bob</h2>
+                    <p class="pubDate">Date Published: 10/14/24</p>
+                    <p class="genre">Genre: Young Reader</p>
+                    <p class="author">Author: Mama</p>
+                </div>
+                <div class="imageBox">
+                    <img src="dream_bob.webp" alt="Dream Bob by Mama">
+                    <p class="description">A young boy finds himself trapped in his dreams. 
+                        With the help of new friends he kills his nightmares and escapes 
+                        back to the real world. Or did he? - The backrooms...</p>
+                </div>
+            </article>
+            <article class="book">
+                <div class="descriptionBox">
+                    <h2 class="title">The Adventures of John Schwartz, Adventurer!</h2>
+                    <p class="pubDate">Date Published: 2/5/24</p>
+                    <p class="genre">Genre: Young Reader</p>
+                    <p class="author">Author: Mississippi</p>
+                </div>
+                <div class="imageBox">
+                    <img src="John-Schwartz2.webp" alt="The Adventures of John Schwartz, Adventurer!">
+                    <p class="description">The Adventures of John Schwartz, Adventurer! 
+                        follows the daring exploits of John Schwartz, a fearless frontiersman in 
+                        the untamed Wild West. From chasing outlaws to uncovering hidden gold mines, 
+                        he navigates danger and mystery at every turn. With his trusty horse and quick draw, 
+                        John faces bandits and wilderness alike, determined to leave his mark on the frontier.</p>
+                </div>
+            </article>
+        </div>
+
+        <!-- Changed to aside for better semantics -->
+        <aside id="staticFilter">
+            <h3>Filter will go here</h3>
+            <!-- Corrected label-for attributes and their corresponding select IDs -->
+            <div id="sort-filter">
+                <label for="sort-select">Sort:</label>
+                <select id="sort-select">
+                    <option value="1">option</option>
+                    <option value="2">option</option>
+                    <option value="3">option</option>
+                </select>
+            </div>
+            <div id="ageRange-filter">
+                <label for="age-select">Age Range:</label>
+                <select id="age-select">
+                    <option value="1">option</option>
+                    <option value="2">option</option>
+                    <option value="3">option</option>
+                </select>
+            </div>
+            <div id="genre-filter">
+                <label for="genre-select">Genre:</label>
+                <select id="genre-select">
+                    <option value="1">option</option>
+                    <option value="2">option</option>
+                    <option value="3">option</option>
+                </select>
+            </div>
+            <div id="rating-filter">
+                <label for="rating-select">Rating:</label>
+                <select id="rating-select">
+                    <option value="1">option</option>
+                    <option value="2">option</option>
+                    <option value="3">option</option>
+                </select>
+            </div>
+        </aside>
+    </main>
+
+    <footer>
+        <!-- Add footer content here -->
+    </footer>
+</body>
+</html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="books4kids.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Books for Kids!</h1>
+        <nav>
+            <img src="books4kids-logo.jpg" alt="Books for kids logo">
             <a href="#">Search</a>
             <a href="#">Library</a>
             <a href="#">About</a>
@@ -18,29 +128,38 @@
 
     <main>
         <div id="bigScroll">
-            <div id="descriptionBox">
-                <p id="author">Author: Mama</p>
-                <p id="title">Title: Dream Bob</p>
+            <div class="descriptionBox">
+                <p id="pubDate">Date Published: 10/14/24</p>
                 <p id="genre">Genre: Young Reader</p>
-                <p id="pubDate">10/14/24</p>
+                <p id="title">Title: Dream Bob</p>
+                <p id="author">Author: Mama</p>
+            </div>
+            <div class="descriptionBox">
+                <p id="pubDate">Date Published: 2/5/24</p>
+                <p id="genre">Genre: Young Reader</p>
+                <p id="title">Title: The Adventures of John Schwartz, Adventurer!</p>
+                <p id="author">Author: Mississippi</p>
+            </div>
+            <div class="imageBox">
+                <h2>Dream Bob</h2>
+                <img src="dream_bob.webp" alt="Dream Bob by Mama">
                 <p id="description">A young boy finds himself trapped in his dreams. 
                     With the help of new friends he kills his nightmares and escapes 
                     back to the real world. Or did he? - The backrooms...</p>
-
             </div>
-            <div id="imageBox">
-                <img src="" alt="">
+            <div class="imageBox">
+                <h2>The Adventures of John Schwartz, Adventurer!</h2>
+                <img src="John-Schwartz2.webp" alt="The Adventures of John Schwartz, Adventurer!">
+                <p id="description">The Adventures of John Schwartz, Adventurer! 
+                    follows the daring exploits of John Schwartz, a fearless frontiersman in 
+                    the untamed Wild West. From chasing outlaws to uncovering hidden gold mines, 
+                    he navigates danger and mystery at every turn. With his trusty horse and quick draw, 
+                    John faces bandits and wilderness alike, determined to leave his mark on the frontier.</p>
             </div>
-            <style>
-                #imageBox {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                }
-            </style>
         </div>
 
         <div id="staticFilter">
+            <h3>Filter will go here</h3>
             <div id="sort-filter">
                 <label for="sort">Sort:</label>
                 <select>
@@ -82,4 +201,4 @@
     </footer>
     
 </body>
-</html>
+</html> -->

@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+/* Added CSS variables for easier maintenance and consistency */
+:root {
+    --primary-font: 'Nunito', sans-serif;
+    --primary-color: rgb(255, 158, 47);
+    --secondary-color: rgb(113, 133, 224);
+    --tertiary-color: rgb(113, 62, 180);
+}
+
+body {
+    font-family: var(--primary-font);
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    color: var(--primary-color);
+}
+
+header img {
+    width: 60px;
+    vertical-align: middle;
+}
+
+/* Adjusted header nav styles for better alignment */
+header nav {
+    text-align: left;
+    padding: 15px;
+    border-top: 2px solid #000;
+    border-bottom: 2px solid #000;
+}
+
+/* Added styles for the new unordered list in the nav */
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+header a {
+    padding: 10px 15px;
+    background-color: var(--primary-color);
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+}
+
+header a:hover {
+    background-color: lightcoral;
+    color: white;
+}
+
+
+main {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 20px; /* Added gap to space out the page for a better user experience */
+}
+
+/* Adjusted bigScroll to use grid layout */
+#bigScroll {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+/* Each book now spans all 3 columns and has its own grid layout */
+.book {
+    grid-column: span 3;
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* 1 column for description, 2 for image/content */
+    gap: 20px;
+}
+
+.descriptionBox {
+    /* background-color: var(--secondary-color); */
+    padding: 20px;
+}
+
+.imageBox {
+    /* background-color: var(--tertiary-color); */
+    padding: 20px;
+    text-align: center;
+}
+
+.imageBox h2 {
+    text-decoration: underline;
+    /* color: var(--primary-color); */
+}
+
+.imageBox img {
+    max-width: 80%;
+    height: auto;
+}
+
+/* Styles for the staticFilter */
+#staticFilter {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+#staticFilter div {
+    margin-bottom: 15px;
+}
+
+/* Added responsive design for smaller screens */
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr; /* Stack elements vertically on small screens */
+    }
+
+    #bigScroll {
+        grid-template-columns: 1fr;
+    }
+
+    .book {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+
+:root {
+    --primary-font: 'Nunito', 'sans-serif';
+}
+
+header h1 {
+    text-align: center;
+    color:rgb(227, 128, 15);
+}
+
+header img {
+    width: 60px;
+    text-align: left;
+}
+
+header a {
+    padding: 15px;
+    background-color: aqua;
+}
+
+header a:hover {
+    background-color: lightcoral;
+    color: white;
+}
+
+header nav {
+    text-align: left;
+    padding: 15px;
+    padding-right: 40px;
+    border-style: solid;
+    border-width: 2px;
+    border-left: 0;
+    border-right: 0;
+}
+
+body {
+    font-family: var(--primary-font);
+    margin: 0;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+#bigScroll {
+    grid-column: 1/4;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+}
+
+.descriptionBox {
+    grid-column: 1 / 2;
+    background-color: rgb(113, 133, 224);
+    padding-top: 80px;
+    padding-left: 80px;
+    text-align: left;
+}
+
+.imageBox {
+    justify-content: center;
+    align-items: center;
+    grid-column: 2 / span 3;
+    background-color: rgb(113, 62, 180);
+    text-align: center;
+    padding: 30px;
+
+}
+
+.imageBox h2 {
+    text-decoration: underline;
+    color:rgb(227, 128, 15);
+}
+
+.imageBox img {
+    width: 300px;
+}
+
+#staticFilter div {
+    grid-column: 3 / span 4;
+    display: none;
+} */
