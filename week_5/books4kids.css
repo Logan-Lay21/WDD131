@@ -3,7 +3,7 @@
 /* Added CSS variables for easier maintenance and consistency */
 :root {
     --primary-font: 'Nunito', sans-serif;
-    --primary-color: rgb(255, 158, 47);
+    --primary-color: rgb(217, 126, 21);
     --secondary-color: rgb(113, 133, 224);
     --tertiary-color: rgb(113, 62, 180);
 }
