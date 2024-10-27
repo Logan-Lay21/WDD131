@@ -1,62 +1,73 @@
-const outputElement = document.querySelector('#biScroll');
+const articles = [
+	{
+		id: 1,
+		title: 'Dream Bob',
+		date: 'October 14, 2024',
+		description:
+			'A young boy finds himself trapped in his dreams. With the help of new friends he kills his nightmares and escapes back to the real world. Or did he?',
+		imgSrc: 'dream_bob.webp',
+		imgAlt: 'Book cover for Dream Bob',
+        author: 'Mama',
+		ages: '10-14',
+		genre: 'Horror/Romance',
+		rating: '⭐⭐⭐⭐⭐'
+	},
+	{
+		id: 2,
+		title: 'The Adventures of John Schwartz, Adventurer!',
+		date: 'February 5, 2024',
+		description:
+			'The Adventures of John Schwartz, Adventurer! follows the daring exploits of John Schwartz, a fearless frontiersman in the untamed Wild West. From chasing outlaws to uncovering hidden gold mines, he navigates danger and mystery at every turn. With his trusty horse and quick draw, John faces bandits and wilderness alike, determined to leave his mark on the frontier.',
+		imgSrc:'John-Schwartz2.webp',
+		imgAlt: 'Book cover for The Adventures of John Shwartz, Adventurer!',
+        author: 'Mississippi',
+		ages: '12-16',
+		genre: 'Shakespearian Tragedy',
+		rating: '⭐⭐⭐⭐⭐'
+	},
+	{
+		id: 3,
+		title: 'The Disappearance of John Doe',
+		date: 'September 6, 2019',
+		description:
+			'In the quiet town of Grey Pines, John Doe—a mysterious figure known to almost no one—vanishes without a trace. For 16-year-old Alice, what begins as a curious search for the missing man soon spirals into a dark and chilling adventure. As she uncovers eerie secrets hidden in the shadows, strange occurrences begin haunting her small town. The deeper Alice digs, the more dangerous the mystery becomes, leading her to question who—or what—John Doe really was.',
+		imgSrc:'the-disappearance-of-john-doe.webp',
+		imgAlt: 'Book cover for The Disappearance of John Doe',
+        author: 'Hope Graves',
+		ages: '14-17',
+		genre: 'Mystery/Thriller',
+		rating: '⭐⭐⭐⭐⭐'
+	}
+]
 
-function createdArticles() {
+const outputElement = document.querySelector('#bigScroll');
+
+function createArticles() {
     articles.forEach(item => {
         const article = document.createElement('article');
 
-        articles.className = 'book';
+        article.className = 'book';
 
         const template = `
             <div class="descriptionBox">
-                <p class="pubDate">Date Published: ${item.date}</p>
-                <p class="genre">Genre: ${item.genre}</p>
-                <p class="author">Author: ${item.genre}</p>
-                <p class="ages">Ages: ${item.ages}</p>
-                <p class="rating">rating: ${item.rating}</p>
+                <p class="pubDate">${item.date}</p>
+                <p class="genre">${item.genre}</p>
+                <p class="author">${item.author}</p>
+                <p class="ages">${item.ages}</p>
+                <p class="rating">${item.rating}</p>
             </div>
             <div class="imageBox">
-
+				<h2>${item.title}</h2>
+                <img src="${item.imgSrc}" alt="${item.imgAlt}">
+                <p class="description">${item.description}</p>
             </div>
         `;
+
+		article.innerHTML = template;
+
+		outputElement.appendChild(article);
 
     })
 }
 
-
-
-
-
-
-
-
-
-
-const articles = [
-	{
-		id: 1,
-		title: 'Septimus Heap Book One: Magyk',
-		date: 'July 5, 2022',
-		description:
-			'If you enjoy stories about seventh sons of seventh sons and magyk this is the book for you.',
-		imgSrc: 'https://upload.wikimedia.org/wikipedia/en/5/5f/Magkycover2.jpg',
-		imgAlt: 'Book cover for Septimus Heap 1',
-        author: 'Author',
-		ages: '10-14',
-		genre: 'Fantasy',
-		rating: '****'
-	},
-	{
-		id: 2,
-		title: 'Magnus Chase Book One: Sword of Summer',
-		date: 'December 12, 2021',
-		description:
-			'The anticipated new novel by Rick Riordan. After Greek mythology (Percy Jackson), Greek/Roman (Heroes of Olympus), and Egyptian (Kane Chronicles), Rick decides to try his hand with Norse Mythology, and the end result is good.',
-		imgSrc:
-			'https://books.google.com/books/content/images/frontcover/xWuyBAAAQBAJ?fife=w300',
-		imgAlt: 'Book cover for Magnus Chase 1',
-        author: 'Author',
-		ages: '12-16',
-		genre: 'Fantasy',
-		rating: '⭐⭐⭐⭐'
-	}
-]
+document.addEventListener('DOMContentLoaded', createArticles)

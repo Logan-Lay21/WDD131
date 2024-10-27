@@ -12,9 +12,9 @@
 </head>
 <body>
     <header>
-        <h1>Books for Kids!</h1>
+        <h1>Kids Read For Fun</h1>
         <nav>
-            <img src="books4kids-logo.jpg" alt="Books for kids logo">
+            <!-- <img src="books4kids-logo.jpg" alt="Books for kids logo"> -->
             <!-- Changed to unordered list for better semantics and accessibility -->
             <ul>
                 <li><a href="#">Search</a></li>
@@ -26,11 +26,8 @@
 
     <main>
         <div id="bigScroll">
-            <!-- Wrapped each book in an article for better structure -->
-            <article class="book">
-                <!-- Changed IDs to classes for reusability -->
+            <!-- <article class="book">
                 <div class="descriptionBox">
-                    <!-- <h2 class="title">Dream Bob</h2> -->
                     <p class="pubDate">Date Published: 10/14/24</p>
                     <p class="genre">Genre: Horror/Romance</p>
                     <p class="author">Author: Mama</p>
@@ -46,7 +43,6 @@
             </article>
             <article class="book">
                 <div class="descriptionBox">
-                    <!-- <h2 class="title">The Adventures of John Schwartz, Adventurer!</h2> -->
                     <p class="pubDate">Date Published: 2/5/24</p>
                     <p class="genre">Genre: Shakespearian Tragedy</p>
                     <p class="author">Author: Mississippi</p>
@@ -61,11 +57,11 @@
                         he navigates danger and mystery at every turn. With his trusty horse and quick draw, 
                         John faces bandits and wilderness alike, determined to leave his mark on the frontier.</p>
                 </div>
-            </article>
+            </article> -->
         </div>
 
         <!-- Changed to aside for better semantics -->
-        <aside id="staticFilter">
+        <div id="staticFilter">
             <h3>Filter will go here</h3>
             <!-- Corrected label-for attributes and their corresponding select IDs -->
             <div id="sort-filter">
@@ -100,7 +96,7 @@
                     <option value="3">option</option>
                 </select>
             </div>
-        </aside>
+        </div>
     </main>
 
     <footer>
