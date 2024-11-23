@@ -12,7 +12,7 @@
     <title>Recipe Book - Delicous Recipes for Every Occasion</title>
     <meta name="description" content="Delicous Recipes for Every Occasion">
     <link rel="stylesheet" href="recipes.css">
-    <script src="main.js" defer></script>
+    <script type="module" src="main.js" defer></script>
 
 </head>
 <body>
@@ -25,22 +25,22 @@
         <div id="search-bar">
             <label for="search"></label>
             <input type="text" name="search" id="search" placeholder="Find a recipe">
-            <button id="search-button"><img src="images/search.svg" alt="search icon"></button>
+            <button id="searchButton"><img src="images/search.svg" alt="search icon"></button>
         </div>
 
     </header>
 
     <main>
-        <div class="recipe-container">
+        <!-- <div class="recipe-container">
             <div class="image-container">
                 <img src="images/apple-crisp.jpg" alt="apple crisp">
             </div>
             <div class="right-container">
-                <div class="tag">
-                    <p>dessert</p>
-                </div>
+                <ul class="tag">
+                    <li>dessert</li>
+                </ul>
                 <div class="subtitle-rating">
-                    <h2>Apple Crisp</h2>
+                    <h2><a href="#">Apple Crisp</a></h2>
                     <span
                         class="rating"
                         role="img"
@@ -57,7 +57,7 @@
                     <p>This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.</p>
                 </div>
             </div>
-        </div>
+        </div> -->
     </main>
 
     <footer>

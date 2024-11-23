@@ -36,7 +36,7 @@ header {
     margin-right: 10px;
 }
 
-#search-button img {
+#searchButton img {
     width: 10px;
 }
 
@@ -62,19 +62,25 @@ main {
 
 }
 
-.tag p {
-    display: inline;
-    font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid rgba(0, 0, 0, 0.8);
-    max-width: 100%;
-    margin: 0;
-    padding: 2px;
+ul{
+    margin: 0px;
+    padding-left: 0px;
 }
 
-.subtitle-rating h2{
+.tag li{
+    display: inline; /* Makes the <li> elements display inline */
+    border: 1px solid rgba(0, 0, 0, 1); /* Same border as .tag p */
+    padding: 3px; /* Same padding as .tag p */
+    border-radius: 1px; /* Same border radius as .tag p */
+    margin-right: 7px;
+}
+
+
+.subtitle-rating h2 a{
     font-family: "Amatic SC", sans-serif;
     margin: 0;
     color:rgb(64, 154, 219);
+    text-decoration: none;
 }
 
 .description {
@@ -88,6 +94,8 @@ main {
 
 .image-container img {
     width: 100%;
+    max-height: 400px;
+    max-width: 500px
 }
 
 footer {
@@ -144,4 +152,11 @@ footer img {
     main {
         width: 960px;
     }
+
+    /* .image-container img {
+        width: 100%;
+        max-height: 400px;
+    } */
+
+    
 }
