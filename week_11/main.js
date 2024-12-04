@@ -1,91 +1,77 @@
-import recipes from './recipes.mjs';
-
+import sets from './sets.mjs';
 
 function randomNumber(number) {
-    return Math.floor(Math.random()*number)
+    return Math.floor(Math.random() * number);
 }
 
-function getRandomListEntry(list) {
-    let length = list.length;
-    let random = randomNumber(length);
-    return list[random]
+function getRandomListEntry(list, usedIndexes) {
+    let random;
+    do {
+        random = randomNumber(list.length);
+    } while (usedIndexes.has(random)); // Ensure no duplicates
+    usedIndexes.add(random); // Mark this index as used
+    return list[random];
 }
 
-function recipeTemplate(recipe) {
-    return `<div class="recipe-container">
+function setTemplate(set) {
+    return `<div class="lego-set-container">
                 <div class="image-container">
-                    <img src="${recipe.image}" alt="${recipe.description}">
+                    <img src="${set.image}" alt="${set.name}">
                 </div>
-                <div class="right-container">
-                    <ul class="tag">
-                        ${tagsTemplate(recipe.tags)}
-                    </ul>
-                    <div class="subtitle-rating">
-                        <h2><a href="#">${recipe.name}</a></h2>
-                        ${ratingTemplate(recipe.rating)}
-
-                    </div>
-                    <div class="description">
-                        <p>${recipe.description}</p>
-                    </div>
+                <div class="info-container">
+                    <h2><a href="${set.url}" target="_blank">${set.name}</a></h2>
+                    <p><strong>Pieces:</strong> ${set.pieces}</p>
+                    <p><strong>Minifigures:</strong> ${set.minifigCount}</p>
+                    <p><strong>Item Number:</strong> ${set.item}</p>
+                    <p><strong>Age Range:</strong> ${set.age}</p>
+                    <ul class="tags"><strong>Tags:</strong> ${tagsTemplate(set.tags)}</ul>
+                    <p><strong>Description:</strong> ${set.description}</p>
+                    ${ratingTemplate(set.rating)}
                 </div>
-            </div>`
+            </div>`;
 }
-
-console.log(getRandomListEntry(recipes))
 
 function tagsTemplate(tags) {
     let html = "";
-	for (let tag of tags) {
-        html += `<li>${tag}</li>`
+    for (let tag of tags) {
+        html += `<li>${tag}</li>`;
     }
-
-    return html
+    return html;
 }
 
 function ratingTemplate(rating) {
-	// begin building an html string using the ratings HTML written earlier as a model.
-	let html = `<span
-	class="rating"
-	role="img"
-	aria-label="Rating: ${rating} out of 5 stars"
->`
+    let html = `<span class="rating" role="img" aria-label="Rating: ${rating} out of 5 stars">`;
 
-// our ratings are always out of 5, so create a for loop from 1 to 5
     for (let i = 1; i <= 5; i++) {
-        // check to see if the current index of the loop is less than our rating
         if (i <= rating) {
-            // if so then output a filled star
             html += `<span aria-hidden="true" class="icon-star">⭐</span>`;
-        // else output an empty star
         } else {
             html += `<span aria-hidden="true" class="icon-star-empty">☆</span>`;
         }
     }
-    // after the loop, add the closing tag to our string
-	html += `</span>`
-	// return the html string
-	return html
+    html += `</span>`;
+    return html;
 }
 
-const recipe = getRandomListEntry(recipes);
-console.log(recipeTemplate(recipe));
-
-function renderRecipes(recipeList) {
-	// get the element we will output the recipes into
-    let div = document.querySelector("main");
-	// use the recipeTemplate function to transform our recipe objects into recipe HTML strings
-    let content = recipeTemplate(recipeList);
-    // Set the HTML strings as the innerHTML of our output element.
+function renderSets(setList) {
+    let div = document.querySelector("main"); // Ensure this points to the right container
+    let content = setTemplate(setList);
     div.innerHTML += content;
 }
 
 function init() {
-    // get a random recipe
-    const recipe = getRandomListEntry(recipes)
-    // render the recipe with renderRecipes.
-    renderRecipes(recipe);
-    }
+    const usedIndexes = new Set(); // Track used indexes to avoid duplicates
+    const set1 = getRandomListEntry(sets, usedIndexes);
+    const set2 = getRandomListEntry(sets, usedIndexes);
+    const set3 = getRandomListEntry(sets, usedIndexes);
+
+    // Render 2 unique LEGO sets
+    renderSets(set2);
+    renderSets(set3);
+    renderSets(set1);
+
+}
+
 init();
 
 // let searchInput = document.getElementById("search")
@@ -108,13 +94,13 @@ init();
 // }
 
 // function filterFunction(query) {
-//     return recipes.filter(recipe => {
+//     return sets.filter(set => {
 //         const _query = query.toLowerCase()
 //         return (
-//             recipe.name.toLowerCase().includes(_query) ||
-//             recipe.description.toLowerCase().includes(_query) ||
-//             recipe.recipeIngredient.some(item => item.toLowerCase().includes(_query)) ||
-//             recipe.tags.some(item => item.toLowerCase().includes(_query))
+//             set.name.toLowerCase().includes(_query) ||
+//             set.description.toLowerCase().includes(_query) ||
+//             set.setIngredient.some(item => item.toLowerCase().includes(_query)) ||
+//             set.tags.some(item => item.toLowerCase().includes(_query))
 //         )
 //     })
 // }
@@ -139,19 +125,19 @@ function searchHandler(event) {
 
     document.querySelector('main').innerHTML = " ";
 
-    filtered.forEach(recipe => {
-        renderRecipes(recipe)
+    filtered.forEach(set => {
+        renderSets(set)
     })
 }
 
 function filterFunction(query) {
-    return recipes.filter(recipe => {
+    return sets.filter(set => {
         const _query = query.toLowerCase()
         return (
-            recipe.name.toLowerCase().includes(_query) ||
-            recipe.description.toLowerCase().includes(_query) ||
-            recipe.recipeIngredient.some(item => item.toLowerCase().includes(_query)) ||
-            recipe.tags.some(item => item.toLowerCase().includes(_query))
+            set.name.toLowerCase().includes(_query) ||
+            set.description.toLowerCase().includes(_query) ||
+            set.setIngredient.some(item => item.toLowerCase().includes(_query)) ||
+            set.tags.some(item => item.toLowerCase().includes(_query))
         )
     })
 }

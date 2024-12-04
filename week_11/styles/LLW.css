@@ -47,7 +47,7 @@ main {
     margin: 0 auto;
 }
 
-.recipe-container {
+.lego-set-container {
     display: flex;
     /* justify-content: space-between; */
     /* align-items: center; */
@@ -92,17 +92,20 @@ ul{
 
 .image-container {
     display: flex;
-    width: 100%;
+    width: 150%;
     margin-right: 15px;
-    max-height: 400px;
+    max-height: 600px;
     /* work with aspect ration*/
 }
 
 .image-container img {
-    width: 100%;
-    /* max-height: 400px; */
-    /* max-width: 400px; */
-    /* width: 100px; */
+    width: 100%;          /* Adjusts the width to fill the container */
+    height: auto;         /* Ensures the image maintains its aspect ratio */
+    max-height: 400px;   /* Restricts how tall an image can be */
+    object-fit: contain;    
+    border-radius: 8px;   /* Optional: Rounds corners for aesthetic */
+    display: block;       /* Ensures no extra space below images */
+    /* margin: 10px auto;  */
 }
 
 footer {
