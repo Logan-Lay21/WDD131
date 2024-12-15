@@ -73,7 +73,7 @@ nav a:hover {
     max-width: 400px;
     max-height: 400px;
     border-radius: 10px;
-    box-shadow: 4px 4px 4px 4px #a42212;
+    box-shadow: 2px 2px 3px 2px #a42212;
 }
 #aboutText {
     grid-column: 2 / 4;
@@ -114,36 +114,49 @@ footer img {
 }
 @media (max-width: 600px) {
 
-    nav {
-        flex-direction: column;
-        align-items: center;
-        border-radius: 8px;
-    }
-
-    nav a {
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    #title {
-        text-align: center;
-    }
-    #aboutPic {
-        display: none;
-    }
-    #aboutText {
-        grid-column: 1 / 4;
-        justify-content: center;
-        margin: 20px;
-        text-align: center;
-        font-family: sans-serif;
-        font-size: 20px;
-
-    }
+nav {
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
 }
 
-/* @media (min-width: 960px) {
-    main {
-        width: 960px;
-    }
-} */
+nav a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#title {
+    text-align: center;
+}
+
+#aboutBgnd {
+    background-color: #F2CD37; /* Background color */
+    max-width: 100%; /* Ensures it doesn't overflow */
+    min-height: 500px; /* Consistent height */
+    padding: 20px;
+    margin: 20px auto; /* Center horizontally */
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(164, 34, 18, 0.5); /* Softer shadow */
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    gap: 20px; /* Add spacing between elements */
+    text-align: center;
+    /* The comments on this one are helps from chat gpt */
+}
+
+#aboutPic img {
+    max-width: 100%; 
+    height: auto; 
+    border-radius: 10px; 
+    box-shadow: 2px 2px 4px rgba(164, 34, 18, 0.5); 
+}
+
+#aboutText {
+    font-family: 'Arial', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+}
+}
