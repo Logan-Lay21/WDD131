@@ -1,7 +1,14 @@
-@import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato");
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fuzzy+Bubbles:wght@400;700&family=Modak&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap');
+/* @import url("https://fonts.googleapis.com/css?family=IM+Fell+French+Canon+SC|Lato"); */
+/* @import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Fuzzy+Bubbles:wght@400;700&family=Modak&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Fascinate&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Coiny&family=Fascinate&display=swap');
+
+:root {
+    --primary-color: #a42212;
+    --secondary-color: #0055BF;
+    --accent1-color: #F2CD37;
+    --accent2-color: #ffff;
+}
 
 header {
     border-bottom: 2px solid rgba(0, 0, 0, 0.2);
@@ -17,16 +24,35 @@ header {
 #title h2 {
     font-family: "Coiny", sans-serif;
     font-size: 50px;
+    color: var(--secondary-color)
     /* margin: 0; */
 }
 
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #0055BF;
+    font-family: sans-serif;
+}
 
-#title img {
+#logo img {
     width: 75px;
 }
 
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 30px 30px;
+}
+
+nav a:hover {
+    background-color: #a42212;
+}
+
 #search {
-    width: 100%;
+    width: 80%;
 }
 
 #search-bar {
@@ -45,6 +71,16 @@ header {
 main {
     max-width: 960px;
     margin: 0 auto;
+}
+
+main p {
+    font-family: sans-serif;
+}
+
+main h2 a {
+    font-family: "Coiny", sans-serif;
+    color: var(--primary-color);
+    text-decoration: none;
 }
 
 .lego-set-container {
@@ -69,7 +105,7 @@ ul{
     padding-left: 0px;
 }
 
-.tag li{
+.tags li{
     display: inline; /* Makes the <li> elements display inline */
     border: 1px solid rgba(0, 0, 0, 1); /* Same border as .tag p */
     padding: 3px; /* Same padding as .tag p */
@@ -92,7 +128,7 @@ ul{
 
 .image-container {
     display: flex;
-    width: 150%;
+    width: 300%;
     margin-right: 15px;
     max-height: 600px;
     /* work with aspect ration*/
@@ -108,17 +144,29 @@ ul{
     /* margin: 10px auto;  */
 }
 
-footer {
+#feet {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+
+#feet a {
+    text-decoration: none;
+    color: rgb(36, 104, 222);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+
+#logos {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-footer a {
-    text-decoration: none;
-    color: rgb(36, 176, 222);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 12px;
+#logos a {
+    margin: 10px;
 }
 
 footer img {
@@ -126,9 +174,37 @@ footer img {
 }
 
 @media (max-width: 600px) {
-    
-    .recipe-container {
+
+    nav {
         flex-direction: column;
+        align-items: center;
+        border-radius: 8px;
+    }
+
+    nav a {
+        padding-top: 15px;
+        padding-bottom: 15px;
+
+    }
+
+    #title {
+        text-align: center;
+        
+    }
+    
+    .lego-set-container {
+        flex-direction: column;
+    }
+
+    .image-container img {
+        max-width: 300px;
+    }
+
+    .image-container {
+        width: 100%;
+        display: flex;
+        /* align-items: center; */
+        justify-content: center;
     }
 
     .description {

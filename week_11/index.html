@@ -28,8 +28,16 @@
 </head>
 <body>
     <header>
+        <nav>
+            <div id="logo">
+                <img src="images/Logans-LEGOs-logo.webp" alt="Logan's LEGOs logo">
+            </div>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="https://www.lego.com/en-us" target="_blank">LEGO Website</a>
+        </nav>
+
         <div id="title">
-            <img src="images/Logans-LEGOs-logo.png" alt="recipes logo">
             <h2>Logan's LEGOs</h2>
         </div>
 
@@ -42,42 +50,30 @@
     </header>
 
     <main>
-        <!-- <div class="recipe-container">
+        <!-- <div class="lego-set-container">
             <div class="image-container">
-                <img src="images/apple-crisp.jpg" alt="apple crisp">
+                <img src="${set.image}" alt="${set.name}">
             </div>
-            <div class="right-container">
-                <ul class="tag">
-                    <li>dessert</li>
-                </ul>
-                <div class="subtitle-rating">
-                    <h2><a href="#">Apple Crisp</a></h2>
-                    <span
-                        class="rating"
-                        role="img"
-                        aria-label="Rating: 4 out of 5 stars">
-                        <span aria-hidden="true" class="icon-star">⭐</span>
-                        <span aria-hidden="true" class="icon-star">⭐</span>
-                        <span aria-hidden="true" class="icon-star">⭐</span>
-                        <span aria-hidden="true" class="icon-star-empty">⭐</span>
-                        <span aria-hidden="true" class="icon-star-empty">☆</span>
-                    </span>
-
-                </div>
-                <div class="description">
-                    <p>This apple crisp recipe is a simple yet delicious fall dessert that's great served warm with vanilla ice cream.</p>
-                </div>
+            <div class="info-container">
+                <h2><a href="${set.url}" target="_blank">${set.name}</a></h2>
+                <p>Pieces: ${set.pieces}</p>
+                <p>Minifigures: ${set.minifigCount}</p>
+                <p>Item Number: ${set.item}</p>
+                <p>Age Range: ${set.age}</p>
+                <ul class="tags"> ${tagsTemplate(set.tags)}</ul>
+                <p>${set.description}</p>
+                ${ratingTemplate(set.rating)}
             </div>
         </div> -->
     </main>
 
     <footer>
-        <a href="https://www.flaticon.com/free-icons/recipe" title="recipe icons">Recipe icons created by Freepik - Flaticon</a>
-        <div class="social">
-            <!-- Social media icons provided under CC from https://www.iconfinder.com/AlfredoCreates  -->
-            <a href="#"><img src="images/instagram_icon.svg" alt="instagram icon"></a>
-            <a href="#"><img src="images/youtube_icon.svg" alt="youtube icon"></a>
-            <a href="#"><img src="images/pinterest_icon.svg" alt="pinterest icon"></a>
+        <div id="feet">
+            <p>Check out the LEGO website or my Github!</p>
+            <div id="logos">
+                <a href="https://www.lego.com/en-us"> <img src="images/LEGO.webp" alt="LEGO website"></a>
+                <a href="https://github.com/Logan-Lay21" target="_blank"><img src="images/github.webp" alt="github icon"></a>
+            </div>
         </div>
     </footer>
 </body>
